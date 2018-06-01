@@ -25,5 +25,31 @@ router.get('/', function(req, res, next) {
     res.send(posts);
 });
 
+///Example with params
+
+// router.get('/:something', function (req, res)  {
+//     res.send(req.params);
+// })
+
+
+router.get('/:id', function (req, res){
+    // res.send(req.params);
+    res.json(req.params);
+})
+
+router.delete('/:id', function (req, res) {
+    res.send(req.params);
+})
+
+router.put('/:post', function (req, res) {              //Modify a post
+    res.send(req.params);
+})
+
+router.post('/:post', function (req, res) {             //Create a new user
+    res.send(req.params)
+})
+
+
+
 
 module.exports = router;

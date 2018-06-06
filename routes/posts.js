@@ -3,6 +3,8 @@ var router = express.Router();
 
 
 
+
+
 //  GET post
 router.get('/', function(req, res, next) {
     var posts = [
@@ -22,7 +24,8 @@ router.get('/', function(req, res, next) {
             imgURL: 'someURL'
         }
     ];
-    res.send(posts);
+    // res.send(posts);
+    res.json(posts);
 });
 
 ///Example with params
@@ -45,8 +48,8 @@ router.put('/:post', function (req, res) {              //Modify a post
     res.send(req.params);
 })
 
-router.post('/:post', function (req, res) {             //Create a new user
-    res.send(req.params)
+router.post('/', function (req, res) {//Create a new user
+    res.send(req.body)
 })
 
 
